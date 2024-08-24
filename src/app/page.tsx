@@ -1,95 +1,66 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import React, { useEffect, useState } from "react";
+import { listModalityImages, listPartnersImages, listPersonalImages, listSpaceImages } from "./firebase/fireStorage";
 
 export default function Home() {
+  const [modalityImages, setModalityImages] = useState<string[]>([]);
+  const [partnerImages, setPartnerImages] = useState<string[]>([]);
+  const [personalImages, setPersonalImages] = useState<string[]>([]);
+  const [spaceImages, setSpaceImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    const displayImages = async () => {
+      const modalityImages = await listModalityImages();
+      const partnerImages = await listPartnersImages();
+      const personalImages = await listPersonalImages();
+      const spaceImages = await listSpaceImages();
+
+      setModalityImages(modalityImages);
+      setPartnerImages(partnerImages);
+      setPersonalImages(personalImages);
+      setSpaceImages(spaceImages);
+    };
+
+    displayImages();
+  }, []);
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
+    <main>
+      <section>
+        <h2>Imagens de Modalidades</h2>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+          {modalityImages.map((url, index) => (
+            <img key={index} src={url} alt={`Modalidade ${index}`} />
+          ))}
         </div>
-      </div>
+      </section>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <section>
+        <h2>Imagens de Parceiros</h2>
+        <div>
+          {partnerImages.map((url, index) => (
+            <img key={index} src={url} alt={`Parceiro ${index}`} />
+          ))}
+        </div>
+      </section>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+      <section>
+        <h2>Imagens Pessoais</h2>
+        <div>
+          {personalImages.map((url, index) => (
+            <img key={index} src={url} alt={`Pessoal ${index}`} />
+          ))}
+        </div>
+      </section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <section>
+        <h2>Imagens do Espaço</h2>
+        <div>
+          {spaceImages.map((url, index) => (
+            <img key={index} src={url} alt={`Espaço ${index}`} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 }
