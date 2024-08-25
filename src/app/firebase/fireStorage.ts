@@ -1,37 +1,52 @@
+// firebase/fireStorage.ts
+import { db } from "@/firebaseConfig";
+import { Modality, Partner, Personal, Space } from "@/types";
+import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
+import { ref, getDownloadURL } from "firebase/storage";
 import { storage } from "@/firebaseConfig";
-import { ref, listAll, getDownloadURL } from "firebase/storage";
 
-export const lisFilesInFolder = async (
-  folderName: string
-): Promise<string[]> => {
-  const folderRef = ref(storage, `${folderName}`);
-  const urls: string[] = [];
-
+export const getImageUrl = async (path: string): Promise<string> => {
   try {
-    const res = await listAll(folderRef);
-    for (const itemRef of res.items) {
-      const url = await getDownloadURL(itemRef);
-      urls.push(url);
-    }
-  } catch (e) {
-    console.error(`Error not found ${folderName} for list itens: `, e);
+    const imageRef = ref(storage, path);
+    const url = await getDownloadURL(imageRef);
+    return url;
+  } catch (error) {
+    console.error("Error getting image URL:", error);
+    throw error;
   }
-
-  return urls;
 };
 
-export const listModalityImages = async (): Promise<string[]> => {
-  return lisFilesInFolder("modalities");
+export const fetchModalities = async (): Promise<Modality[]> => {
+  const querySnapshot: QuerySnapshot = await getDocs(
+    collection(db, "modalities")
+  );
+  return querySnapshot.docs.map(
+    (doc) => ({ id: doc.id, ...doc.data() } as Modality)
+  );
 };
 
-export const listPartnersImages = async (): Promise<string[]> => {
-  return lisFilesInFolder("partners");
+export const fetchPartners = async (): Promise<Partner[]> => {
+  const querySnapshot: QuerySnapshot = await getDocs(
+    collection(db, "partners")
+  );
+  return querySnapshot.docs.map(
+    (doc) => ({ id: doc.id, ...doc.data() } as Partner)
+  );
 };
 
-export const listPersonalImages = async (): Promise<string[]> => {
-  return lisFilesInFolder("personal");
+export const fetchPersonal = async (): Promise<Personal[]> => {
+  const querySnapshot: QuerySnapshot = await getDocs(
+    collection(db, "personal")
+  );
+  console.log(querySnapshot);
+  return querySnapshot.docs.map(
+    (doc) => ({ id: doc.id, ...doc.data() } as Personal)
+  );
 };
 
-export const listSpaceImages = async (): Promise<string[]> => {
-  return lisFilesInFolder("space");
+export const fetchSpace = async (): Promise<Space[]> => {
+  const querySnapshot: QuerySnapshot = await getDocs(collection(db, "space"));
+  return querySnapshot.docs.map(
+    (doc) => ({ id: doc.id, ...doc.data() } as Space)
+  );
 };

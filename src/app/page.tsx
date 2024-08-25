@@ -1,66 +1,52 @@
 'use client'
 import React, { useEffect, useState } from "react";
-import { listModalityImages, listPartnersImages, listPersonalImages, listSpaceImages } from "./firebase/fireStorage";
+import { fetchModalities, fetchPartners, fetchPersonal, fetchSpace, getImageUrl } from "./firebase/fireStorage";
+import { Modality, Partner, Personal, Space } from "@/types";
+
+
 
 export default function Home() {
-  const [modalityImages, setModalityImages] = useState<string[]>([]);
-  const [partnerImages, setPartnerImages] = useState<string[]>([]);
-  const [personalImages, setPersonalImages] = useState<string[]>([]);
-  const [spaceImages, setSpaceImages] = useState<string[]>([]);
+  const [modalities, setModality] = useState<Modality[]>([]);
+  const [partners, setPartner] = useState<Partner[]>([]);
+  const [personals, setPersonal] = useState<Personal[]>([]);
+  const [space, setSpace] = useState<Space[]>([]);
+  const [imageUrls, setImageUrls] = useState<{ [key: string]: string }>({});
 
   useEffect(() => {
     const displayImages = async () => {
-      const modalityImages = await listModalityImages();
-      const partnerImages = await listPartnersImages();
-      const personalImages = await listPersonalImages();
-      const spaceImages = await listSpaceImages();
+      try {
+        const modalities = await fetchModalities();
+        const partners = await fetchPartners();
+        const personals = await fetchPersonal();
+        const space = await fetchSpace();
 
-      setModalityImages(modalityImages);
-      setPartnerImages(partnerImages);
-      setPersonalImages(personalImages);
-      setSpaceImages(spaceImages);
+        setModality(modalities)
+        setPartner(partners)
+        setPersonal(personals)
+        setSpace(space)
+
+        const urls: { [key: string]: string } = {};
+        for (const item of personals) {
+          const url = await getImageUrl(`${item.id}.jpg`);
+          urls[item.id] = url;
+        }
+        setImageUrls(urls);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+
     };
 
     displayImages();
   }, []);
 
+
   return (
     <main>
-      <section>
-        <h2>Imagens de Modalidades</h2>
-        <div>
-          {modalityImages.map((url, index) => (
-            <img key={index} src={url} alt={`Modalidade ${index}`} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>Imagens de Parceiros</h2>
-        <div>
-          {partnerImages.map((url, index) => (
-            <img key={index} src={url} alt={`Parceiro ${index}`} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>Imagens Pessoais</h2>
-        <div>
-          {personalImages.map((url, index) => (
-            <img key={index} src={url} alt={`Pessoal ${index}`} />
-          ))}
-        </div>
-      </section>
-
-      <section>
-        <h2>Imagens do Espaço</h2>
-        <div>
-          {spaceImages.map((url, index) => (
-            <img key={index} src={url} alt={`Espaço ${index}`} />
-          ))}
-        </div>
-      </section>
+      <ul>
+        {
+          personals.map((personal, index) => (<li key={index}>{personal.name} <img src={imageUrls[personal.id]} /></li>))
+        }</ul>
     </main>
   );
 }

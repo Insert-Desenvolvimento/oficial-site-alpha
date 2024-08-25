@@ -1,5 +1,6 @@
 import { db } from "../../firebaseConfig";
 import { addDoc, collection } from "firebase/firestore";
+import { v4 as uuidv4 } from "uuid";
 
 const personalData = [
   {
@@ -160,7 +161,13 @@ const parceirosData = [
 const populateCollection = async (collectionName: string, data: any[]) => {
   const colRef = collection(db, collectionName);
   for (const item of data) {
-    await addDoc(colRef, item);
+    const uuid = uuidv4();
+    const newItem = {
+      ...item,
+      id: uuid,
+      photoUrl: `gs://alpha-academia-firebase.appspot.com/${collectionName}/${uuid}.jpg`,
+    };
+    await addDoc(colRef, newItem);
   }
 };
 
