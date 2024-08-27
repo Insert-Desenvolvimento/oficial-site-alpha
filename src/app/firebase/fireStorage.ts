@@ -1,4 +1,3 @@
-// firebase/fireStorage.ts
 import { db } from "@/firebaseConfig";
 import { Modality, Partner, Personal, Space } from "@/types";
 import { collection, getDocs, QuerySnapshot } from "firebase/firestore";
