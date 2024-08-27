@@ -1,0 +1,131 @@
+.container {
+    display: flex;
+    height: 60px;
+    width: 1000px;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    
+  
+    .content-head {
+      width: 20%;
+      height: 60px;
+      box-sizing: border-box;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+  
+      .head-img {
+        width: 60%;
+        min-width: 70px;
+        object-fit: contain;
+      }
+    }
+  
+    .gallery-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  
+      .content-gallery-menu {
+        display: flex;
+        padding: 0;
+        align-items: center;
+        justify-content: space-between;
+        
+       .alpha{
+            background-color: #efb608;
+            padding: 10px;
+            border-radius: 10px;
+            &:hover{
+                background-color: #b2890b;
+            }
+        }
+  
+        .menu-item {
+          margin-left: 15px;
+          text-decoration: none;
+          color: #000000;
+          font-size: 14px;
+        }
+      }
+  
+      @media (max-width: 1024px) {
+        display: none; 
+        
+      }
+    }
+  
+    .menu-button {
+      display: none; 
+  
+      @media (max-width: 1024px) {
+        display: block;
+        background-color: transparent;
+        border: none;
+        padding: 0;
+        font-size: 24px;
+        color: #000;
+  
+        .anticon {
+          color: #000;
+          font-size: 28px;
+        }
+      }
+    }
+  
+    .drawer-menu {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        padding: 16px;
+        text-align: center;
+        border-bottom: 1px solid #f0f0f0;
+  
+        a {
+          color: #000;
+          text-decoration: none;
+          font-size: 18px;
+        }
+        
+      }
+    }
+   
+}
+ul{
+    list-style-type: none;
+}
+a{
+    color: #000;
+    text-decoration: none;
+    font-size: 18px;
+    &:hover {
+        color: #efb608;
+      }
+}
+ul .drawer-alpha{
+    background-color: #efb608;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    justify-content: center;    
+    height: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    &:hover{
+        background-color: #b2890b;
+    }
+    & a:hover{
+        color: #f0f0f0;
+    }
+}
+
+
