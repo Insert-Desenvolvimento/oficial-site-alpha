@@ -1,26 +1,49 @@
-'use client';
+"use client"
+import React from 'react';
+import Head from './components/Head';
+import { useEffect } from 'react';
 
-import React, { useEffect } from 'react';
-import { usePersonalStore } from './store/personalDocs';
-
-const PersonalComponent = () => {
-  const { personalDocs, fetchPersonalDocs } = usePersonalStore();
+const Home = () => {
+  const list = [
+    {
+      name: "Quem somos",
+      route: "#about"
+    },
+    {
+      name: "Nossos Produtos",
+      route: "#plans"
+    },
+    {
+      name: "Nossa Equipe",
+      route: "#group"
+    },
+    {
+      name: "Nossos Parceiros",
+      route: "#partners"
+    },
+    {
+      name: "Contatos",
+      route: "#contacts"
+    },
+    {
+      name: "Seja Alpha",
+      route: "/register"
+    },
+  ]
 
   useEffect(() => {
-    fetchPersonalDocs();
-  }, [fetchPersonalDocs]);
+    document.querySelectorAll('[cz-shortcut-listen]').forEach(el => {
+      el.removeAttribute('cz-shortcut-listen');
+    });
+  }, []);
 
   return (
-    <div>
-      <h1>Personal Documents</h1>
-      {personalDocs.map((doc) => (
-        <div key={doc.id}>
-          {doc.imageUrl && <img src={doc.imageUrl} alt={doc.name} />}
-          <p>{doc.name}</p>
-        </div>
-      ))}
+
+    <div className="container">
+      <Head list={list} />
+      <h1>Home</h1>
     </div>
   );
 };
 
-export default PersonalComponent;
+export default Home;

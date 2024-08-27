@@ -8,7 +8,18 @@ export const getImageUrl = async (
   try {
     const fileRef = ref(storage, `${folder}/${id}.jpg`);
     const url = await getDownloadURL(fileRef);
-    console.log(url);
+    return url;
+  } catch (error) {
+    console.error("Error fetching image URL: ", error);
+    return "";
+  }
+};
+
+export const getBannerImage = async (): Promise<string> => {
+  try {
+    const fileRef = ref(storage, "banner/cardio.jpg");
+    const url = await getDownloadURL(fileRef);
+
     return url;
   } catch (error) {
     console.error("Error fetching image URL: ", error);
