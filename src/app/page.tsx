@@ -2,7 +2,8 @@
 import React from 'react';
 import Head from './components/Head';
 import { useEffect } from 'react';
-
+import Banner from './components/Banner';
+import "./page.scss"
 const Home = () => {
   const list = [
     {
@@ -40,8 +41,10 @@ const Home = () => {
   return (
 
     <div className="container">
-      <Head list={list} />
-      <h1>Home</h1>
+      <div className='content-header'>
+        <Head list={list} />
+        <Banner />
+      </div>
     </div>
   );
 };
