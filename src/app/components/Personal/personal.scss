@@ -1,0 +1,85 @@
+.container-personal {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+    cursor: pointer;
+}
+
+.container-personal-info {
+    margin-bottom: 20px;
+}
+
+.container-personal-info h1 {
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.container-personal-info p {
+    color: rgb(128, 131, 138);
+    font-weight: 500;
+    line-height: 20px;
+    text-align: justify;
+    max-width: 600px;
+}
+
+.carousel-container {
+    width: 100%;
+    max-width: 1000px; 
+    margin: 0 auto; 
+}
+
+.personal-card {
+    width: 900px; 
+    height: 600px; 
+    margin: auto; 
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(239, 182, 8, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.personal-image {
+    height: 500px;
+    width: 100%; /* Certifica que a imagem ocupe toda a largura disponível */
+    overflow: hidden;
+    object-fit: cover; /* Faz a imagem cobrir o contêiner */
+    object-position: top; /* Mostra a parte superior da imagem */
+    border-bottom: 1px solid #efb608;
+}
+
+.ant-carousel .slick-prev,
+.ant-carousel .slick-next {
+    width: 30px;
+    height: 30px;
+    z-index: 1; 
+}
+
+@media (max-width: 992px) {
+    .container-personal{
+        width: 100%;
+        max-width: 800px;
+    }
+    .ant-card .ant-card-cover{
+        width: 100%;
+
+    
+    }
+    .personal-card {
+        width: 100%; 
+        height: 500px; 
+    }
+    .personal-image {
+        img{
+            width: 100%;
+        }
+    }
+}
+@media (max-width: 448px) {
+    .container-personal{
+        width: 100%;
+        max-width: 350px;
+    }
+}

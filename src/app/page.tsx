@@ -6,6 +6,7 @@ import Banner from './components/Banner';
 import "./page.scss"
 import Modalitie from './components/Modalitie';
 import Space from './components/Space';
+import Personal from './components/Personal';
 const Home = () => {
   const list = [
     {
@@ -49,6 +50,7 @@ const Home = () => {
       </div>
       <Modalitie />
       <Space />
+      <Personal />
     </div>
   );
 };
