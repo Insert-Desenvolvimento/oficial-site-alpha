@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "@/firebaseConfig";
-import { Modality, Space } from "@/types";
+import { Space } from "@/types";
 import { getImageUrl } from "../firebase/fireStorage";
 
 interface SpaceState {
@@ -26,10 +26,11 @@ export const useSpaceStore = create<SpaceState>((set, get) => ({
 
   updateSpaceDocsWithImages: async () => {
     const { spaceDocs } = get();
+    console.log(spaceDocs);
 
     const updatedDocs = await Promise.all(
       spaceDocs.map(async (doc) => {
-        const imageUrl = await getImageUrl("spaces", doc.id);
+        const imageUrl = await getImageUrl("space", doc.id);
         return { ...doc, imageUrl };
       })
     );
