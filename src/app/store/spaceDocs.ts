@@ -26,7 +26,6 @@ export const useSpaceStore = create<SpaceState>((set, get) => ({
 
   updateSpaceDocsWithImages: async () => {
     const { spaceDocs } = get();
-    console.log(spaceDocs);
 
     const updatedDocs = await Promise.all(
       spaceDocs.map(async (doc) => {
