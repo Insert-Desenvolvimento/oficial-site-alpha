@@ -27,7 +27,7 @@ const Head = ({ list }: MenuProps) => {
     };
 
     return (
-        <div className='container'>
+        <div className='container-head'>
             <div className='content-head' onClick={() => window.alert("Você já está na página principal")}>
                 <img className='head-img' src='/logo.png' alt='Logo da Alpha Academia' />
             </div>
