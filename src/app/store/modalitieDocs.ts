@@ -7,7 +7,7 @@ import { getImageUrl } from "../firebase/fireStorage";
 interface ModalitieState {
   modalityDocs: Modality[];
   fetchModalityDocs: () => void;
-  updateModalityDocsWithImages: () => Promise<void>;
+  // updateModalityDocsWithImages: () => Promise<void>;
 }
 
 export const useModalityStore = create<ModalitieState>((set, get) => ({
@@ -21,19 +21,19 @@ export const useModalityStore = create<ModalitieState>((set, get) => ({
     })) as Modality[];
     set({ modalityDocs: docs });
 
-    get().updateModalityDocsWithImages();
+    // get().updateModalityDocsWithImages();
   },
 
-  updateModalityDocsWithImages: async () => {
-    const { modalityDocs } = get();
+  // updateModalityDocsWithImages: async () => {
+  //   const { modalityDocs } = get();
 
-    const updatedDocs = await Promise.all(
-      modalityDocs.map(async (doc) => {
-        const imageUrl = await getImageUrl("modalities", doc.id);
-        return { ...doc, imageUrl };
-      })
-    );
+  //   const updatedDocs = await Promise.all(
+  //     modalityDocs.map(async (doc) => {
+  //       const imageUrl = await getImageUrl("modalities", doc.id);
+  //       return { ...doc, imageUrl };
+  //     })
+  //   );
 
-    set({ modalityDocs: updatedDocs });
-  },
+  //   set({ modalityDocs: updatedDocs });
+  // },
 }));

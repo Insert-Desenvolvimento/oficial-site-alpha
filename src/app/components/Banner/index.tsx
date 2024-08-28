@@ -7,6 +7,7 @@ const Banner = () => {
     const router = useRouter();
     const [images, setImages] = useState<string[]>([]);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [isImageLoaded, setIsImageLoaded] = useState(false);
 
     const fetchImageBanner = async () => {
         const bannerImages = await getBannerImages();
@@ -21,11 +22,16 @@ const Banner = () => {
         if (images.length > 0) {
             const intervalId = setInterval(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+                setIsImageLoaded(false); // Reset image loaded state when image changes
             }, 5000);
 
             return () => clearInterval(intervalId);
         }
     }, [images]);
+
+    const handleImageLoad = () => {
+        setIsImageLoaded(true);
+    };
 
     const changePage = () => {
         router.push("/register");
@@ -33,7 +39,19 @@ const Banner = () => {
 
     return (
         <div className='container-banner'>
-            <img src={images[currentImageIndex]} alt="Banner" />
+            {/* Skeleton Loader */}
+            {!isImageLoaded && <div className="skeleton"></div>}
+
+            {/* Image Element */}
+            {images.length > 0 && (
+                <img
+                    src={images[currentImageIndex]}
+                    alt="Banner"
+                    className={isImageLoaded ? 'loaded' : ''}
+                    onLoad={handleImageLoad}
+                />
+            )}
+
             <div className="banner-text" onClick={changePage}>
                 <h1>Transforme seu estilo de vida com a Alpha</h1>
                 <p>Alpha academia oferecendo o que há de melhor para Mar de Espanha e região.</p>

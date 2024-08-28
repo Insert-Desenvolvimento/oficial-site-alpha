@@ -4,6 +4,7 @@ import Head from './components/Head';
 import { useEffect } from 'react';
 import Banner from './components/Banner';
 import "./page.scss"
+import Modalitie from './components/Modalitie';
 const Home = () => {
   const list = [
     {
@@ -45,6 +46,7 @@ const Home = () => {
         <Head list={list} />
         <Banner />
       </div>
+      <Modalitie />
     </div>
   );
 };
