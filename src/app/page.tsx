@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import Banner from './components/Banner';
 import "./page.scss"
 import Modalitie from './components/Modalitie';
+import Space from './components/Space';
 const Home = () => {
   const list = [
     {
@@ -47,6 +48,7 @@ const Home = () => {
         <Banner />
       </div>
       <Modalitie />
+      <Space />
     </div>
   );
 };

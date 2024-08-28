@@ -27,7 +27,7 @@ export interface Space {
   id: string;
   name: string;
   description: string;
-  imgUrl?: string;
+  imageUrl?: string;
 }
 
 export interface Plan {
@@ -35,7 +35,7 @@ export interface Plan {
   name: string;
   description: string[];
   discount: number;
-  imgUrl?: string;
+  imageUrl?: string;
   price: number;
 }
 
