@@ -22,7 +22,7 @@ const Banner = () => {
         if (images.length > 0) {
             const intervalId = setInterval(() => {
                 setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
-                setIsImageLoaded(false); // Reset image loaded state when image changes
+                setIsImageLoaded(false);
             }, 5000);
 
             return () => clearInterval(intervalId);
@@ -39,10 +39,7 @@ const Banner = () => {
 
     return (
         <div className='container-banner'>
-            {/* Skeleton Loader */}
             {!isImageLoaded && <div className="skeleton"></div>}
-
-            {/* Image Element */}
             {images.length > 0 && (
                 <img
                     src={images[currentImageIndex]}
