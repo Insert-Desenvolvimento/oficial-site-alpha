@@ -1,7 +1,8 @@
 .container-space {
     padding: 20px;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
+    margin: 0 auto;
 }
 
 .container-space-info {
@@ -18,17 +19,15 @@
     font-weight: 500;
     line-height: 20px;
     text-align: justify;
-    max-width: 600px;
 }
 
 .carousel-container {
     width: 100%;
-    max-width: 1000px; 
     margin: 0 auto; 
 }
 
 .space-card {
-    width: 900px; 
+    width: 100%; 
     height: 500px; 
     margin: auto; 
     border-radius: 8px;
@@ -40,11 +39,12 @@
 }
 
 .space-image {
-    width: 300px;
+    width: 100%;
     height: 400px; 
     object-fit: cover;
     border-bottom: 1px solid #efb608;
     aspect-ratio: 1/1;
+
 }
 
 .ant-carousel .slick-prev,
@@ -57,7 +57,7 @@
 @media (max-width: 992px) {
     .container-space{
         width: 100%;
-        max-width: 800px;
+        // max-width: 800px;
     }
     .ant-card .ant-card-cover{
         width: 100%;

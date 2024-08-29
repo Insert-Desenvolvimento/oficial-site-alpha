@@ -2,6 +2,7 @@
     display: flex;
     height: 60px;
     max-width: 1000px;
+    padding: 0px 20px;
     width: 100%;
     justify-content: space-between;
     align-items: center;
@@ -18,13 +19,11 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-      justify-content: center;
       cursor: pointer;
   
       .head-img {
         width: 60%;
-        min-width: 70px;
-        object-fit: contain;
+        object-fit: cover;
       }
     }
   
@@ -127,6 +126,13 @@ ul .drawer-alpha{
     & a:hover{
         color: #f0f0f0;
     }
+}
+
+@media (max-width: 480px){
+  .container-head{
+    width: auto;
+    margin: 0 20px;
+  }
 }
 
 
