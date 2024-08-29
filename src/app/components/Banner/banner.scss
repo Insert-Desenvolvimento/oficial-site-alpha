@@ -59,6 +59,7 @@
         font-size: 22px;
         color: #fff;
         font-weight: bold;
+        
     }
     }
 
@@ -79,9 +80,6 @@
     }
 
     .banner-text {
-        top: 50%; 
-        left: 50%;
-        transform: translate(-50%, -50%); 
         width: 100%;
         max-width: none; 
         padding: 15px;
@@ -103,17 +101,15 @@
     }
 
     .banner-text {
-        top: 50%; 
-        transform: translate(-50%, -50%); 
         width: 100%;
         padding: 10px;
 
         h1 {
-            font-size: 16px;
+            font-size: 12px;
         }
 
         p {
-            font-size: 12px;
+            font-size: 8px;
         }
     }
 }
@@ -125,13 +121,11 @@
     }
 
     .banner-text {
-        top: 50%; 
-        transform: translate(-50%, -50%); 
         width: 100% ;
         padding: 8px;
 
         h1 {
-            font-size: 16px;
+            font-size: 12px;
         }
 
         p {

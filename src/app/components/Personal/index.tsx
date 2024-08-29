@@ -11,7 +11,7 @@ const Personal = () => {
     }, []);
 
     return (
-        <div className="container-personal">
+        <div className="container-personal" id='group'>
             <div className="container-personal-info">
                 <h1>Nossa Equipe</h1>
                 <p>A equipe Alpha é treinada e capacitada para te atender da melhor forma. Todos nosso profissionais são formados e certificados.</p>

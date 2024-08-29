@@ -4,7 +4,6 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-
 }
 
 .container-personal-info {
@@ -18,21 +17,22 @@
 
 .container-personal-info p {
     color: rgb(128, 131, 138);
-    font-weight: 500;
-    line-height: 20px;
     text-align: justify;
     max-width: 600px;
+    font-weight: 300;
+    line-height: 30px;
+    font-size: 1rem;
 }
 
 .carousel-container {
     width: 100%;
-    max-width: 1000px; 
+    max-width: 1200px; 
     margin: 0 auto; 
 }
 
 .personal-card {
     width: 900px; 
-    height: 600px; 
+    height: 700px; 
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(239, 182, 8, 0.1);
@@ -43,7 +43,7 @@
 }
 
 .personal-image {
-    height: 500px;
+    height: 600px;
     width: 100%; 
     overflow: hidden;
     object-fit: cover; 
@@ -62,7 +62,6 @@
 @media (max-width: 992px) {
     .container-personal{
         width: 100%;
-        max-width: 800px;
     }
     .ant-card .ant-card-cover{
         width: 100%;
