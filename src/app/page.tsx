@@ -8,19 +8,24 @@ import Modalitie from './components/Modalitie';
 import Space from './components/Space';
 import Personal from './components/Personal';
 import About from './components/About';
+import Products from './components/Products';
 const Home = () => {
   const list = [
     {
-      name: "Quem somos",
-      route: "#about"
+      name: "Home",
+      route: "#home"
     },
     {
-      name: "Nossos Produtos",
-      route: "#plans"
+      name: "Nosso Espaço",
+      route: "#space"
     },
     {
       name: "Nossa Equipe",
       route: "#group"
+    },
+    {
+      name: "Nossos Planos",
+      route: "#plans"
     },
     {
       name: "Nossos Parceiros",
@@ -52,6 +57,7 @@ const Home = () => {
       <Modalitie />
       <Space />
       <Personal />
+      <Products />
       <About />
     </div>
   );

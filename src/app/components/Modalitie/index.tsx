@@ -12,7 +12,7 @@ const Modalitie = () => {
 
 
     return (
-        <div className='container-modalitie'>
+        <div className='container-modalitie' id='home'>
             <div className='container-modality-info'>
                 <h1>Modalidades</h1>
                 <p>Temos diversas modalidades em nossa academia para que você tenha o melhor desenvolvimento do seu corpo e sua saúde</p>

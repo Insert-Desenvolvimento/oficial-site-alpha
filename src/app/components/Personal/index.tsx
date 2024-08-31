@@ -20,7 +20,7 @@ const Personal = () => {
                 className="carousel-container"
                 dots
                 arrows
-                autoplay={false}
+                autoplay={true}
             >
                 {personalDocs.map((item) => (
                     <Card

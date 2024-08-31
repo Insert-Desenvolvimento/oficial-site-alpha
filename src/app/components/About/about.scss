@@ -2,11 +2,15 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    background-color: rgba(239, 182, 8);
     padding: 20px;
     height: 700px;
     margin: 0 auto;
     margin-top: 30px;
+    h2{
+        font-weight: 300;
+        font-size: 16px;
+        color: rgb(128, 131, 138);
+    }
     h1{
         font-weight: 300;
         font-size: 28px;

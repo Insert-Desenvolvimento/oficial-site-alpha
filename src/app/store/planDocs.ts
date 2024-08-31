@@ -8,7 +8,7 @@ interface PlanState {
   fetchPlanDocs: () => void;
 }
 
-export const useModalityStore = create<PlanState>((set) => ({
+export const usePlanStore = create<PlanState>((set) => ({
   planDocs: [],
 
   fetchPlanDocs: async () => {

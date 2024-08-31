@@ -1,0 +1,140 @@
+.container-products{
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+    position: relative;
+}
+
+.container-products-info{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    h1{
+        font-weight: 300;
+        font-size: 28px;
+    }
+    p{
+        font-weight: 300;
+        font-size: 16px;
+        color: rgb(128, 131, 138);
+    }
+}
+.products-gallery{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    padding: 0;
+
+}
+.name-plan{
+    font-size: 16px;
+    color: rgb(75, 74, 74);
+    font-weight: bold;
+    margin-top: 20px;
+    width: 85%;
+    text-align: left;
+    margin-bottom: 0;
+}
+.frequency{
+    margin: 0;
+    font-size: 12px;
+}
+.price{
+    margin-top: 5px;
+    font-size: 22px;
+    color: #000;
+    font-weight: bold;
+}
+.plan-card{
+    padding: 10px;
+    max-width: 250px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+    border: 1px solid rgba(208, 209, 209);
+    margin: 10px;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.5s;
+    @media (max-width: 448px) {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+.plan-benefit{
+    width: 85%;
+    height: 200px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    font-weight: 400;
+    gap: 20px;
+}
+.item-benefit{
+    margin: 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    height: 20px;
+    img{
+        width: 20px;
+        padding: 2px;
+        border-radius: 50%;
+        background-color: #000;
+        margin-right: 10px;
+        object-fit: contain;
+    }
+    p{
+        margin: 0;
+    }
+}
+.muscle-plan{
+    position: absolute;
+    top: -20px;
+    width: 35px;
+}
+.plan-button{
+    width: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(208, 209, 209);
+    transition: 0.5s;
+
+}
+
+.plan-card:hover{
+    background-color:#efb608;
+    .price{
+        color: #101011;
+    }
+    .plan-benefit{
+        color: #101011;
+    }
+    .frequency{
+        color: #101011;
+    }
+   
+}
+.frase{
+    font-size: 12px;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 5px;
+}

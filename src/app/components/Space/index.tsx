@@ -11,7 +11,7 @@ const Space = () => {
     }, []);
 
     return (
-        <div className="container-space">
+        <div className="container-space" id='space'>
             <div className="container-space-info">
                 <h1>Nossa Estrutura</h1>
                 <p>A Alpha oferece uma estrutura moderna, limpa e espaçosa para suas atividades</p>
@@ -19,8 +19,8 @@ const Space = () => {
             <Carousel
                 className="carousel-container"
                 dots
-                arrows // Habilita setas para navegação manual
-                autoplay={false} // Define autoplay como false para navegação manual
+                arrows
+                autoplay={true}
             >
                 {spaceDocs.map((item) => (
                     <Card
