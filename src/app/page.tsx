@@ -28,6 +28,10 @@ const Home = () => {
       route: "#plans"
     },
     {
+      name: "Sobre Nós",
+      route: "#about"
+    },
+    {
       name: "Nossos Parceiros",
       route: "#partners"
     },
