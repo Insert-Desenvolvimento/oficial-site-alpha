@@ -11,31 +11,31 @@ const Personal = () => {
     }, []);
 
     return (
-        <div className="container-personal" id='group'>
-            <div className="container-personal-info">
-                <h1>Nossa Equipe</h1>
-                <p>A equipe Alpha é treinada e capacitada para te atender da melhor forma. Todos nosso profissionais são formados e certificados.</p>
+        <>
+            <div className='container-backgound'>
+                <div className="container-personal-info">
+                    <h1>Nós temos os <span className='personal-target'>melhores</span> profissionais de <span className='personal-target'>Mar de Espanha e região</span>.</h1>
+                    <p>A equipe Alpha é treinada e capacitada para te atender da melhor forma. Todos nosso profissionais são formados e certificados.</p>
+                </div>
+                <div className="container-personal" id='group'>
+                    <ul className='gallery-personal'>
+                        {
+                            personalDocs.map((item, index) => (
+                                <li key={index} className='container-card'>
+                                    <div className='container-img'>
+                                        <img alt={item.name} src={item.imageUrl} className="personal-image" />
+                                    </div>
+                                    <div className='container-text-personal'>
+                                        <p>{item.name}</p>
+                                        <p className='qualify'>Personal Trainer</p>
+                                    </div>
+                                </li>
+                            ))
+                        }
+                    </ul>
+                </div>
             </div>
-            <Carousel
-                className="carousel-container"
-                dots
-                arrows
-                autoplay={true}
-            >
-                {personalDocs.map((item) => (
-                    <Card
-                        key={item.id}
-                        className="personal-card"
-                        cover={<img alt={item.name} src={item.imageUrl} className="personal-image" />}
-                    >
-                        <Card.Meta
-                            title={item.name}
-                            description={item.description}
-                        />
-                    </Card>
-                ))}
-            </Carousel>
-        </div>
+        </>
     );
 };
 

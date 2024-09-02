@@ -54,7 +54,7 @@ const Home = () => {
 
   return (
 
-    <div className="container">
+    <main className="container">
       <div className='content-header'>
         <Head list={list} />
         <Banner />
@@ -65,7 +65,7 @@ const Home = () => {
       <Products />
       <Combination />
       <About />
-    </div>
+    </main>
   );
 };
 
