@@ -6,12 +6,21 @@ export const getImageUrl = async (
   id: string
 ): Promise<string> => {
   try {
-    const fileRef = ref(storage, `${folder}/${id}.jpg`);
-    const url = await getDownloadURL(fileRef);
-    return url;
-  } catch (error) {
-    console.error("Error fetching image URL: ", error);
-    return "";
+    // Tenta buscar a imagem .jpg primeiro
+    const fileRefJpg = ref(storage, `${folder}/${id}.jpg`);
+    const urlJpg = await getDownloadURL(fileRefJpg);
+    return urlJpg;
+  } catch (errorJpg) {
+    console.warn("JPG image not found, trying PNG: ", errorJpg);
+    try {
+      // Se não encontrar .jpg, tenta buscar a imagem .png
+      const fileRefPng = ref(storage, `${folder}/${id}.png`);
+      const urlPng = await getDownloadURL(fileRefPng);
+      return urlPng;
+    } catch (errorPng) {
+      console.error("Error fetching image URL for both formats: ", errorPng);
+      return "";
+    }
   }
 };
 
