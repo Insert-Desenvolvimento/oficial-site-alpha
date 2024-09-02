@@ -9,6 +9,7 @@ import Space from './components/Space';
 import Personal from './components/Personal';
 import About from './components/About';
 import Products from './components/Products';
+import Combination from './components/CombinationProducts';
 const Home = () => {
   const list = [
     {
@@ -62,6 +63,7 @@ const Home = () => {
       <Space />
       <Personal />
       <Products />
+      <Combination />
       <About />
     </div>
   );
