@@ -54,7 +54,7 @@ const About = () => {
                                                             : item.name === "20" ? <Handshake color='#efb608' size={"38px"} />
                                                                 : item.name === "15" ? <Boxes color='#efb608' size={"38px"} /> : <></>
                                             }
-                                            <h1 className='card-name'>{item.name}</h1>
+                                            <h1 className='card-name'>{item.name}+</h1>
                                         </div>
                                         <p className='card-description'>{item.description}</p>
                                     </li>
@@ -65,7 +65,6 @@ const About = () => {
                     </div>
                 </div>
             </div>
-            <div className='separator'></div>
         </>
     );
 }

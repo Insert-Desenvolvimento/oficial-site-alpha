@@ -1,7 +1,6 @@
 .container-about{
     display: flex;
     flex-wrap: wrap;
-    padding: 20px;
     margin: 0 auto;
     margin-top: 30px;
     background-color: rgba($color: #000000, $alpha: 0.9);
@@ -23,7 +22,7 @@
         color: #E0E0E0;
         font-weight: 300;
         line-height: 25px;
-        text-align: justify;
+        text-align: left;
         padding-top: 20px;
         margin: 0 auto;
     }
@@ -42,7 +41,7 @@
         padding: 5px;
         h1{
             font-size: 38px;
-            text-align: justify;
+            text-align: left;
         }
         @media (max-width: 992px) {
             width: 100%;
@@ -86,6 +85,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba($color: #000000, $alpha: 0.5);
 }
 .list-minicard{
     width: 100%;
@@ -128,9 +128,9 @@
     
 }
 .item-card .card-description{
-    font-size: 12px;
+    font-size: 14px;
     color: #E0E0E0;
-    text-align: justify;
+    text-align: center;
     padding: 5px;
 }
 
