@@ -50,6 +50,7 @@ const Head = ({ list }: MenuProps) => {
                 title='Menu'
                 placement='right'
                 onClose={onClose}
+                className='menu-draw'
                 open={visible}
                 style={{ padding: 0 }}
             >
