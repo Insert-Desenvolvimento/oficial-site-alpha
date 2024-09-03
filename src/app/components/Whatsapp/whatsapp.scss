@@ -1,0 +1,36 @@
+.whats {
+   position: fixed;
+   bottom: 20px; 
+   right: 20px; 
+   display: flex;
+   justify-content: flex-end;
+   z-index: 9999;
+   padding: 0;
+   img{
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      animation: pulse 2s infinite;
+      @media (max-width: 778px) {
+         width: 120px;
+      }
+      
+   }
+   @media (max-width: 778px) {
+      bottom: 10px; 
+      right: 0px; 
+   }
+  
+}
+
+@keyframes pulse {
+   0% {
+       transform: scale(1); 
+   }
+   50% {
+       transform: scale(1.05);
+   }
+   100% {
+       transform: scale(1); 
+   }
+}
