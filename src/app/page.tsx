@@ -10,6 +10,7 @@ import Personal from './components/Personal';
 import About from './components/About';
 import Products from './components/Products';
 import Combination from './components/CombinationProducts';
+import Whatsapp from './components/Whatsapp';
 const Home = () => {
   const list = [
     {
@@ -33,10 +34,6 @@ const Home = () => {
       route: "#about"
     },
     {
-      name: "Nossos Parceiros",
-      route: "#partners"
-    },
-    {
       name: "Contatos",
       route: "#contacts"
     },
@@ -53,19 +50,21 @@ const Home = () => {
   }, []);
 
   return (
-
-    <main className="container">
-      <div className='content-header'>
-        <Head list={list} />
-        <Banner />
-      </div>
-      <Modalitie />
-      <Space />
-      <Personal />
-      <Products />
-      <Combination />
-      <About />
-    </main>
+    <>
+      <main className="container">
+        <div className='content-header'>
+          <Head list={list} />
+          <Banner />
+        </div>
+        <Modalitie />
+        <Space />
+        <Personal />
+        <Products />
+        <Combination />
+        <About />
+      </main>
+      <Whatsapp />
+    </>
   );
 };
 
