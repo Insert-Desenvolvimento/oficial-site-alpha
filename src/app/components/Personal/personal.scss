@@ -9,6 +9,7 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 10px;
+    margin-bottom: 50px;
     
 }
 .container-text-personal{
@@ -32,6 +33,8 @@
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 10px;
+    margin-bottom: 50px;
+    
     @media (max-width: 992px) {
         justify-content: center;
     }
@@ -71,6 +74,11 @@
     gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media (max-width:778px) {
+        justify-content: center;
+        padding: 0;
+        margin: 5px;
+    }
 }
 .container-card{
     width: 200px;

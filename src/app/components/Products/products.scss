@@ -5,12 +5,14 @@
     justify-content: center;
     min-height: 500px;
     position: relative;
+    margin-bottom: 50px;
 }
 
 .container-products-info{
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
+    margin-bottom: 50px;
     h1{
         font-weight: 300;
         font-size: 28px;
@@ -76,6 +78,9 @@
     @media (max-width: 448px) {
         width: 100%;
         max-width: 300px;
+        padding: 0;
+        margin: 5px;
+
     }
 }
 .plan-benefit{
