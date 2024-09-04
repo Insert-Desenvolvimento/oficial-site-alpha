@@ -45,3 +45,15 @@ export interface PageText {
   subtitle: string;
   text: string;
 }
+
+export interface FormData {
+  name: string;
+  modalitie: string;
+  birthdate: string;
+  cpf: string;
+  medicalHistory: string;
+  goal: string;
+  observations: string;
+  email: string;
+  healthIssueDescription: string;
+}
