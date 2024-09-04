@@ -4,13 +4,18 @@ import { usePlanStore } from '@/app/store/planDocs';
 import React, { useEffect } from 'react';
 import "./products.scss"
 import { formatCurrency } from '@/utils';
+import { useRouter } from 'next/navigation';
 
 const Products = () => {
     const { planDocs, fetchPlanDocs } = usePlanStore();
-
+    const route = useRouter()
     useEffect(() => {
         fetchPlanDocs();
     }, [])
+
+    const changePage = () => {
+        route.push("/register");
+    };
     return (
         <>
             <div className='container-products-info' id='plans'>
@@ -34,7 +39,7 @@ const Products = () => {
                                         <div className='plan-benefit'>
                                             {plan.description.map((item, indexDesc) => (<span className='item-benefit' key={indexDesc}><img src='/confirm.svg' /><p className='text-benefit'>{item}</p></span>))}
                                         </div>
-                                        <div className='plan-button'>Inscreva-se</div>
+                                        <div className='plan-button' onClick={changePage}>Inscreva-se</div>
                                     </li>
                                 ))
                             }

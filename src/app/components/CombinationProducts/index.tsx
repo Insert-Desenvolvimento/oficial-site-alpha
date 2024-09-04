@@ -4,13 +4,20 @@ import React, { useEffect } from 'react';
 import "./combination.scss"
 import { formatCurrency } from '@/utils';
 import { useCombinationStore } from '@/app/store/combinationDocs';
+import { useRouter } from 'next/navigation';
 
 const Combination = () => {
     const { combinationDocs, fetchCombinationDocs } = useCombinationStore();
 
+    const route = useRouter();
+
     useEffect(() => {
         fetchCombinationDocs();
     }, [])
+
+    const changePage = () => {
+        route.push("/register");
+    };
     return (
         <>
             <div className='container-products-combo-info' id='plans'>
@@ -34,7 +41,7 @@ const Combination = () => {
                                         <div className='plan-benefit-combo'>
                                             {plan.description.map((item, indexDesc) => (<span className='item-benefit' key={indexDesc}><img src='/confirm.svg' /><p className='text-benefit'>{item}</p></span>))}
                                         </div>
-                                        <div className='plan-button'>Inscreva-se</div>
+                                        <div className='plan-button' onClick={changePage}>Inscreva-se</div>
                                     </li>
                                 ))
                             }
