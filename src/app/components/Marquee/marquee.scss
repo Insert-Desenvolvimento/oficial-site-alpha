@@ -1,0 +1,27 @@
+.marquee-wrapper {
+    overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites */
+    width: 100%;      /* Ocupa toda a largura disponível */
+  }
+  
+  .marquee-content {
+    display: flex;
+    animation: scroll-left 20s linear infinite; /* Movimento suave e contínuo */
+    white-space: nowrap; /* Impede a quebra de linha */
+  }
+  
+  .marquee-word {
+    font-size: 3rem;     /* Tamanho maior da fonte */
+    font-weight: bold;   /* Negrito */
+    color: #333;         /* Cor do texto */
+    margin-right: 50px;  /* Espaçamento entre as palavras */
+  }
+  
+  @keyframes scroll-left {
+    0% {
+      transform: translateX(0); /* Começa na posição inicial */
+    }
+    100% {
+      transform: translateX(-100%); /* Move as palavras para a esquerda */
+    }
+  }
+  

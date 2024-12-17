@@ -33,7 +33,7 @@ const Combination = () => {
                             {
                                 combinationDocs.map((plan, index) => (
                                     <li key={index} className='plan-card'>
-                                        <span className='name-plan'>{plan.name}
+                                        <span className='name-plan-combination'>{plan.name}
                                             <p className='price-combo'>{formatCurrency(plan.price)}
                                                 <span className='frequency'> / Mês</span></p>
                                         </span>

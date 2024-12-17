@@ -12,6 +12,7 @@ import Products from './components/Products';
 import Combination from './components/CombinationProducts';
 import Whatsapp from './components/Whatsapp';
 import Footer from './components/Footer';
+import Marquee from './components/Marquee';
 
 const Home = () => {
   const list = [
@@ -64,6 +65,7 @@ const Home = () => {
         <Products />
         <Combination />
         <About />
+        <Marquee/>
         <Footer />
       </main>
       <Whatsapp />
