@@ -51,7 +51,7 @@ const ModalPersonal = ({
               <p className="hobbiePersonal">{item.hobby}</p>
             </div>
             <div className="contact">
-              <h2>Fale com o Profissional</h2>
+              <h2>Entre em contato</h2>
               <form onSubmit={handleSubmit}>
                 <input
                   type="text"
@@ -69,7 +69,7 @@ const ModalPersonal = ({
                   ref={objectiveRef}
                 />
                 <div className="btnWhatsPersonal">
-                <button type="submit"> ENTRE EM CONTATO</button>
+                <button type="submit"> Enviar</button>
               </div>
               </form>
               

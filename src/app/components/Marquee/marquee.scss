@@ -1,27 +1,46 @@
 .marquee-wrapper {
-    overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites */
-    width: 100%;      /* Ocupa toda a largura disponível */
+    overflow: hidden;
+    width: 100%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    background-color: rgba($color: #000000, $alpha: 0.8);
   }
   
   .marquee-content {
     display: flex;
-    animation: scroll-left 20s linear infinite; /* Movimento suave e contínuo */
-    white-space: nowrap; /* Impede a quebra de linha */
+    white-space: nowrap;
+    animation: scroll-left 25s linear infinite;
   }
-  
   .marquee-word {
-    font-size: 3rem;     /* Tamanho maior da fonte */
-    font-weight: bold;   /* Negrito */
-    color: #333;         /* Cor do texto */
-    margin-right: 50px;  /* Espaçamento entre as palavras */
-  }
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #efb608;
+      margin: 0 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;   
+      position: relative; 
+    }
+    .marquee-word::after{
+      content: "";
+      position: absolute;
+      width: 10px;
+      right: -20px;
+      text-align: center;
+      border-radius: 50%;
+      background-color: #efb608;
+      font-size: 40px;
+      height: 10px;
+    }
   
   @keyframes scroll-left {
     0% {
-      transform: translateX(0); /* Começa na posição inicial */
+      transform: translateX(0);
     }
     100% {
-      transform: translateX(-100%); /* Move as palavras para a esquerda */
+      transform: translateX(-50%);
     }
   }
   

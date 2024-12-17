@@ -109,9 +109,17 @@
     border-radius: 4px;
     height: 40px;
     transition: ease-in-out 150ms;
+    >button{
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        font-size: 16px;
+        cursor: pointer;
+        font-weight: 600;
+    }
     &:hover{
         background-color: #000;
-        a{
+        button{
             color: #efb608;
         }
     }
