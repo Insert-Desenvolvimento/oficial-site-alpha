@@ -23,7 +23,6 @@
     gap: 20px;
     max-height: 700px;
     overflow: hidden;
-    padding: 20px;
 }
 .container-left{
     width: 50%;
@@ -89,7 +88,6 @@
 }
 @media (max-width: 778px){
     width: 100%;
-    padding: 20px;
     form{
         input{
             height: 50px;

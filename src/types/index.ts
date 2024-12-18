@@ -57,3 +57,10 @@ export interface FormData {
   email: string;
   healthIssueDescription: string;
 }
+
+export interface ItemBanner {
+  photoUrl?: string;
+  title?: string;
+  text?: string;
+  [key: string]: unknown;
+}
