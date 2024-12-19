@@ -8,6 +8,7 @@ import { Handshake } from 'lucide-react';
 import { Boxes } from 'lucide-react';
 import "./about.scss"
 import { Card } from '@/utils';
+import BannerUnique from '../BannerUnique';
 
 const About = () => {
     const { pageText, fetchPageText } = usePageTextStore();
@@ -40,6 +41,9 @@ const About = () => {
                             </div>
                         </section>
                     </div>
+                    
+                    <BannerUnique/>
+
                     <div className='minicard'>
                         <ul className='list-minicard'>
                             {

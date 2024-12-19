@@ -134,18 +134,18 @@
     }
 }
 .textElementsPersonal::-webkit-scrollbar {
-    width: 8px; /* Largura do scrollbar */
+    width: 8px; 
 }
 
 .textElementsPersonal::-webkit-scrollbar-track {
-    background: transparent; /* Fundo transparente */
+    background: transparent;
 }
 
 .textElementsPersonal::-webkit-scrollbar-thumb {
-    background-color: rgba(54, 54, 54, 0.8); /* Tom de chumbo com transparência */
-    border-radius: 4px; /* Bordas arredondadas */
+    background-color: rgba(54, 54, 54, 0.8);
+    border-radius: 4px; 
 }
 
 .textElementsPersonal::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(54, 54, 54, 1); /* Tom de chumbo mais opaco ao passar o mouse */
+    background-color: rgba(54, 54, 54, 1); 
 }
