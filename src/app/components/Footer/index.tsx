@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
             <div className='obrigatoriedade'>
                 <p className='direitos'>Todos direitos reservados a: &copy; Alpha Academia</p>
-                <p className='dev'>Desenvolvido e mantido por Flávio Santos</p>
+                <p className='dev'>Desenvolvido e mantido por FLLA TECH</p>
             </div>
         </div>
     );
