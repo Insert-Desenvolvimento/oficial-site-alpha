@@ -40,12 +40,15 @@
     @media (max-width:992px) {
         flex-wrap: wrap;
         width: 100%;
+        padding: 0;
         h1{
             width: 100%;
             font-size: 16px;
+            padding: 10px;
         }
         p{
             width: 100%;
+            padding: 10px;
         }
     }
 }
