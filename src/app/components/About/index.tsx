@@ -32,6 +32,8 @@ const About = () => {
                     <div className='content-all'>
                         <section className='content-body-text'>
                             <div className='call-text'>
+                                <p className='destaque-name'>Alpha Academia</p>
+                                <div className='legals'>CNPJ-12970722000158/CREF 001974-PJ/MG</div>
                                 <h1>Porque ser mais um, se você pode ser <span className='destaque'>Alpha</span>. Da nossa historia até a construção da <span className='destaque'>sua história</span>.</h1>
                             </div>
                             <div className='container-text-about'>
@@ -41,8 +43,8 @@ const About = () => {
                             </div>
                         </section>
                     </div>
-                    
-                    <BannerUnique/>
+
+                    <BannerUnique />
 
                     <div className='minicard'>
                         <ul className='list-minicard'>

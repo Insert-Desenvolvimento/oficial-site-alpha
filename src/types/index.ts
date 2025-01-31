@@ -21,6 +21,7 @@ export interface Personal {
   contactNumber: string;
   imageUrl?: string;
   photoUrl: string;
+  qualify: string;
 }
 
 export interface Space {

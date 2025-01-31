@@ -60,9 +60,8 @@ const Personal = () => {
                 onClick={() => handleOpenModal(item)}
               >
                 <div
-                  className={`container-img ${
-                    loadingImages[index] === false ? "" : "skeleton"
-                  }`}
+                  className={`container-img ${loadingImages[index] === false ? "" : "skeleton"
+                    }`}
                 >
                   <img
                     alt={item.name}
@@ -74,7 +73,7 @@ const Personal = () => {
                 </div>
                 <div className="container-text-personal">
                   <p>{item.name}</p>
-                  <p className="qualify">Personal Trainer</p>
+                  <p className="qualify">{item.qualify}</p>
                 </div>
               </li>
             ))}
