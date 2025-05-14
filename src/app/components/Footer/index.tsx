@@ -16,7 +16,8 @@ const Footer = () => {
             </div>
             <div className='obrigatoriedade'>
                 <p className='direitos'>Todos direitos reservados a: &copy; Alpha Academia</p>
-                <p className='dev'>Desenvolvido e mantido por FLLA TECH</p>
+                <p className='dev'>Desenvolvido e mantido por FLLATECH</p>
+                <p className='ing_fllatech'><Instagram size={16} /><a href="https://www.instagram.com/fllatech" target="_blank" rel="noopener noreferrer"></a>fllatech</p>
             </div>
         </div>
     );

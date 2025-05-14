@@ -7,7 +7,7 @@
   min-height: 100px;
   .obrigatoriedade{
     color: #fff;
-    font-size: 8px;
+    font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -39,5 +39,12 @@
     }
   }
 }
-
+.ing_fllatech{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  a{
+    width: 5px;
+  }
+}
 
