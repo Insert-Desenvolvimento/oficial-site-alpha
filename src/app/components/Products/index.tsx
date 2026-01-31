@@ -33,7 +33,7 @@ const Products = () => {
                                     <li key={index} className='plan-card'>
                                         <span className='name-plan'>{plan.name}
                                             <p className='price'>{formatCurrency(plan.price)}
-                                                <span className='frequency'> / Mês</span></p>
+                                                <span className='frequency'> {plan.name !== "Avulso" ? "/Mês" : "/ Dia"}</span></p>
                                         </span>
 
                                         <div className='plan-benefit'>

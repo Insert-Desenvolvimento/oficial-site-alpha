@@ -40,6 +40,15 @@ export interface Plan {
   price: number;
 }
 
+export interface AnualPlan{
+  id: string;
+  name: string;
+  description: string[];
+  amount: number,
+  parcel: number,
+  economy: number,
+}
+
 export interface PageText {
   id: string;
   title: string;
